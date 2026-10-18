@@ -223,10 +223,6 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 405, { message: "Method not allowed" });
     }
 
-    if (path === "/" && method === "GET") {
-      return sendJson(res, 200, { message: "OK" });
-    }
-
     return sendJson(res, 404, { message: "Not found" });
   } catch (e) {
     return sendJson(res, 500, { message: "Internal server error" });
